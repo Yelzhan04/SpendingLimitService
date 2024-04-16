@@ -9,6 +9,7 @@ import java.sql.Date;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "transactions")
 public class Transaction {
     @Id
@@ -43,4 +44,5 @@ public class Transaction {
 
     @Column(name = "limit_exceeded")
     private boolean limitExceeded;
+
 }

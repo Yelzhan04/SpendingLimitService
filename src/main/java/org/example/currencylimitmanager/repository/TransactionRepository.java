@@ -16,8 +16,6 @@ public interface TransactionRepository extends JpaRepository<Transaction,Long> {
 
     List<Transaction> findByMonthlyLimitAndLimitExceededIsTrue(MonthlyLimit monthlyLimit);
 
-    BigDecimal sumAmountByMonthlyLimit(MonthlyLimit monthlyLimit);
-
     List<Transaction> findByTransactionDateBetween(Date startDate, Date endDate);
 
     List<Transaction> findByExpenseCategory(String expenseCategory);

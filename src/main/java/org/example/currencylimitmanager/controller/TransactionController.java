@@ -34,7 +34,7 @@ public class TransactionController {
     }
 
     @GetMapping("/exceeded-limit")
-    public ResponseEntity<List<Transaction>> getTransactionsExceedingLimit(@RequestParam Long monthlyLimitId) {
+    public ResponseEntity<List<Transaction>> getTransactionsExceedingLimit(@RequestBody  MonthlyLimit monthlyLimitId) {
         MonthlyLimit monthlyLimit = new MonthlyLimit();
         List<Transaction> transactions = transactionService.getAllTransactionsExceedingLimit(monthlyLimit);
         return new ResponseEntity<>(transactions, HttpStatus.OK);
